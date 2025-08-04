@@ -45,6 +45,7 @@ const Login = () => {
       localStorage.setItem('token', result.token);
       localStorage.setItem('user', JSON.stringify(result.user));
 
+
       if (result.user.role === 'admin') {
         navigate('/admin-dashboard');
       } else if (result.user.role === 'driver') {
@@ -73,7 +74,7 @@ const Login = () => {
             name="user_email"
             className="form-control"
             placeholder="you@example.com"
-            value={formData.email}
+            value={formData.user_email}
             onChange={handleChange}
             required
           />
@@ -85,7 +86,7 @@ const Login = () => {
             name="user_password"
             className="form-control"
             placeholder="Password"
-            value={formData.password}
+            value={formData.user_password}
             onChange={handleChange}
             required
           />

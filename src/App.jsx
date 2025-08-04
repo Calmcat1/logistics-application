@@ -1,52 +1,118 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { AuthProvider } from './context/AuthContext';
-
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
+import DriverDashboard from './pages/driver/driverDashboard';
+import DriverUpdateStatus from './pages/driver/driverUpdateStatus';
 
-// import DriverDashboard from './pages/driver/Dashboard';
-// import AssignedDeliveries from './pages/driver/AssignedDeliveries';
-// import UpdateStatus from './pages/driver/UpdateStatus';
-// import Schedule from './pages/driver/Schedule';
+import CustomerDashboard from './pages/customer/customerDashboard';
+import CustomerTrackOrders from './pages/customer/customerTrackOrders';
+import CustomerNewOrder from './pages/customer/customerNewOrder';
 
-// import CustomerDashboard from './pages/customer/Dashboard';
-// import Orders from './pages/customer/Orders';
-// import NewOrder from './pages/customer/NewOrder';
+import AdminDashboard from './pages/admin/adminDashboard';
+import AdminManageUsers from './pages/admin/adminManageUsers';
+import AdminCreateDelivery from './pages/admin/adminCreateDeliveries';
+import AdminViewDeliveries from './pages/admin/adminViewDeliveries';
+import AdminModifyOrder from './pages/admin/adminModifyOrder';
 
-// import AdminDashboard from './pages/admin/Dashboard';
-// import ManageDrivers from './pages/admin/ManageDrivers';
-// import ManageCustomers from './pages/admin/ManageCustomers';
-// import CreateOrder from './pages/admin/CreateOrder';
-// import AssignDeliveries from './pages/admin/AssignDeliveries';
-// import GenerateReports from './pages/admin/GenerateReports'
+import ProtectedRoute from './components/protectedRoute';
 
 function App() {
+
+
   return (
     <Router>
-      {/* <AuthProvider> */}
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register/>}/>
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-          {/* Driver Routes */}
-          {/* <Route path="/driver" element={<DriverDashboard />} />
-          <Route path="/driver/assigned" element={<AssignedDeliveries />} />
-          <Route path="/driver/status" element={<UpdateStatus />} />
-          <Route path="/driver/schedule" element={<Schedule />} /> */}
+        {/* Driver Routes */}
+        <Route
+          path="/driver-dashboard"
+          element={
+            <ProtectedRoute>
+              <DriverDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/driver-update-status"
+          element={
+            <ProtectedRoute>
+              <DriverUpdateStatus />
+            </ProtectedRoute>
+          }
+        />
 
-          {/* Customer Routes */}
-          {/* <Route path="/customer" element={<CustomerDashboard />} />
-          <Route path="/customer/orders" element={<Orders />} />
-          <Route path="/customer/new-order" element={<NewOrder />} /> */}
+        {/* Customer Routes */}
+        <Route
+          path="/customer-dashboard"
+          element={
+            <ProtectedRoute>
+              <CustomerDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/customer-track-orders"
+          element={
+            <ProtectedRoute>
+              <CustomerTrackOrders />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/customer-new-order"
+          element={
+            <ProtectedRoute>
+              <CustomerNewOrder />
+            </ProtectedRoute>
+          }
+        />
 
-          {/* Admin Routes */}
-          {/* <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/manage-drivers" element={<ManageDrivers />} />
-          <Route path="/admin/manage-customers" element={<ManageCustomers />} />
-          <Route path="/admin/orders-overview" element={<OrdersOverview />} /> */}
-        </Routes>
-      {/* </AuthProvider> */}
+        {/* Admin Routes */}
+        <Route
+          path="/admin-dashboard"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-manage-users"
+          element={
+            <ProtectedRoute>
+              <AdminManageUsers />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-create-delivery"
+          element={
+            <ProtectedRoute>
+              <AdminCreateDelivery />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-view-deliveries"
+          element={
+            <ProtectedRoute>
+              <AdminViewDeliveries />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-modify-order"
+          element={
+            <ProtectedRoute>
+              <AdminModifyOrder />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
     </Router>
   );
 }
