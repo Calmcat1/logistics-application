@@ -65,7 +65,8 @@ const AdminViewDeliveries = () => {
           <thead className="table-dark">
             <tr>
               <th>Driver Name</th>
-              <th>Driver Email</th>
+              <th>Delivery Customer Name</th>
+              <th>Delivery Destination</th>
               <th>ETA</th>
               <th>Status</th>
               <th>Actions</th>
@@ -80,7 +81,8 @@ const AdminViewDeliveries = () => {
               deliveries.map((delivery) => (
                 <tr key={delivery.delivery_id}>
                   <td>{delivery.delivery_driver_name}</td>
-                  <td>{delivery.delivery_driver_email}</td>
+                  <td>{delivery.delivery_customer_name}</td>
+                  <td>{delivery.delivery_destination}</td>
                   <td>{delivery.delivery_ETA}</td>
                   <td>{delivery.delivery_status}</td>
                   <td>

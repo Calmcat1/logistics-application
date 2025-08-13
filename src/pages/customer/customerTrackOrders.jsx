@@ -29,7 +29,7 @@ const TrackOrders = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:8080/logistics/api/v1/orders/${orderId}`, {
+      const response = await fetch(`http://localhost:8080/logistics/api/v1/order/orders/${orderId}`, {
         method: 'DELETE',
       });
 
@@ -96,7 +96,7 @@ const TrackOrders = () => {
                   <td>
                     <button
                       className="btn btn-sm btn-danger"
-                      onClick={() => handleDelete(order.orderId)}
+                      onClick={() => handleDelete(order.order_id)}
                     >
                       Delete
                     </button>

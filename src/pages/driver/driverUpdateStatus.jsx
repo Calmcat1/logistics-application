@@ -90,6 +90,7 @@ const DriverModifyDelivery = () => {
             <tr>
               <th>Delivery ID</th>
               <th>Driver Assigned</th>
+              <th>Delivery Destination</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -104,6 +105,7 @@ const DriverModifyDelivery = () => {
                 <tr key={delivery.delivery_id}>
                   <td>{delivery.delivery_id}</td>
                   <td>{delivery.delivery_driver_name}</td>
+                  <td>{delivery.delivery_destination}</td>
                   <td>{delivery.delivery_status}</td>
                   <td>
                     <button

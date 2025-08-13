@@ -49,10 +49,10 @@ const AdminManageUsers = () => {
         <div className="sidebar-heading p-3 fs-4 fw-bold">Admin Panel</div>
         <div className="list-group list-group-flush">
           <a href="/admin-dashboard" className="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
-          <a href="/admin-manage-users" className="list-group-item list-group-item-action bg-dark text-white">Manage Users</a>
+          <a href="/admin-manage-users" className="list-group-item list-group-item-action bg-dark text-white active">Manage Users</a>
           <a href="/admin-modify-order" className="list-group-item list-group-item-action bg-dark text-white">Modify Order</a>
           <a href="/admin-create-delivery" className="list-group-item list-group-item-action bg-dark text-white">Create Delivery</a>
-          <a href="/admin-view-deliveries" className="list-group-item list-group-item-action bg-dark text-white active">View Deliveries</a>
+          <a href="/admin-view-deliveries" className="list-group-item list-group-item-action bg-dark text-white">View Deliveries</a>
           <a href="/login" className="list-group-item list-group-item-action bg-dark text-white">Logout</a>
         </div>
       </div>

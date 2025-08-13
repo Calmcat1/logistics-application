@@ -36,7 +36,8 @@ const CreateDelivery = () => {
         setMessage('Delivery created successfully!');
         setFormData({
           delivery_driver_name: '',
-          delivery_driver_email: '',
+          delivery_customer_name: '',
+          delivery_destination: '',
           delivery_ETA: '',
           delivery_status: 'in progress',
         });
@@ -60,7 +61,7 @@ const CreateDelivery = () => {
           <a href="/admin-manage-users" className="list-group-item list-group-item-action bg-dark text-white">Manage Users</a>
           <a href="/admin-modify-order" className="list-group-item list-group-item-action bg-dark text-white">Modify Order</a>
           <a href="/admin-create-delivery" className="list-group-item list-group-item-action bg-dark text-white active">Create Delivery</a>
-          <a href="/admin-view-deliveries" className="list-group-item list-group-item-action bg-dark text-white active">View Deliveries</a>
+          <a href="/admin-view-deliveries" className="list-group-item list-group-item-action bg-dark text-white">View Deliveries</a>
           <a href="/login" className="list-group-item list-group-item-action bg-dark text-white">Logout</a>
         </div>
       </div>
@@ -86,12 +87,24 @@ const CreateDelivery = () => {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Driver Email</label>
+            <label className="form-label">Customer Name</label>
             <input
-              type="email"
-              name="delivery_driver_email"
+              type="text"
+              name="delivery_customer_name"
               className="form-control"
-              value={formData.delivery_driver_email}
+              value={formData.delivery_customer_name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Delivery Destination</label>
+            <input
+              type="text"
+              name="delivery_destination"
+              className="form-control"
+              value={formData.delivery_destination}
               onChange={handleChange}
               required
             />
